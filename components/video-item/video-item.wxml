@@ -1,0 +1,12 @@
+<!--components/video-item/video-item.wxml-->
+<wxs src="../../utils/formaters.wxs" module="formaters" />
+<view class="item">
+  <view class="album">
+    <image class="album-image" src="{{itemData.cover}}" mode="widthFix" />
+    <viwe class="info">
+      <view class="info-platCount">{{formaters.formatNumber(itemData.playCount)}}</view>
+      <view class="info-duration">{{formaters.formatTime(itemData.mv.videos[0].duration)}}</view>
+    </viwe>
+  </view>
+  <view class="content">{{itemData.name}}-{{itemData.artistName}}</view>
+</view>

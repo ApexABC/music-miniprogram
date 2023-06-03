@@ -1,0 +1,27 @@
+<!--pages/detail-video/detail-video.wxml-->
+<wxs src="../../utils/formaters.wxs" module="formaters" />
+<video class="video" src="{{MvUrl}}" referrer-policy="origin" />
+
+<scroll-view class="content" scroll-y>
+  <view class="MvInfo">
+    <view class="MvInfo-name">{{MvInfo.name}}</view>
+    <view class="MvInfo-artistName">{{MvInfo.artistName}}</view>
+    <view class="MvInfo-detail">
+      {{formaters.formatNumber(MvInfo.playCount)}}次播放-{{MvInfo.publishTime}}
+    </view>
+  </view>
+
+  <view class="relativeVideo">
+    <view class="relativeVideo-title">推荐视频</view>
+    <block wx:for="{{MvRelativeList}}" wx:key="vid">
+      <view class="rVideo-item">
+        <image class="rVideo-item_image" src="{{item.coverUrl}}" mode="widthFix" />
+        <view class="rVideo-item-playTime">{{formaters.formatNumber(item.playTime)}}</view>
+        <view class="rVideo-item-detail">
+          <view class="rVideo-item_title">{{item.title}}</view>
+          <view class="rVideo-item_transName">{{item.transName?item.transName:''}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
