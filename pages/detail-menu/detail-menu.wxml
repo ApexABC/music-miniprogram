@@ -1,0 +1,14 @@
+<!--pages/detail-menu/detail-menu.wxml-->
+<view class="all-menu">
+  <block wx:for="{{tagMusicList}}" wx:key="cat">
+    <area-header title="{{item.cat}}" hasMore="{{false}}"></area-header>
+    <view class="list">
+      <block wx:for="{{item.playlists}}" wx:key="id" wx:for-item="item2">
+        <view class="songList-item">
+          <image class="songList-item_image" src="{{item2.coverImgUrl}}" mode="widthFix" />
+          <view class="songList-item_title">{{item2.name}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

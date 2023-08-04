@@ -1,0 +1,7 @@
+<!--components/song-area/song-area.wxml-->
+<area-header title="{{title}}" bind:moreclick="onMenuMoreClick"></area-header>
+<scroll-view class="hot-music" scroll-x>
+  <block wx:for="{{songList}}" wx:key="id">
+    <song-item-v2 itemData="{{item}}" class="hotMusic-item"></song-item-v2>
+  </block>
+</scroll-view>

@@ -1,0 +1,23 @@
+<!--components/nav-bar/nav-bar.wxml-->
+<view class="nav-bar">
+  <view class="status" style="height: {{statusHeight}}px;"></view>
+  <view class="nav">
+    <view class="nav-left" bindtap="onBack">
+      <view class="slot">
+        <slot name="left"></slot>
+      </view>
+      <view class="default">
+        <van-icon name="arrow-left" size="18px" />
+      </view>
+    </view>
+    <view class="nav-center">
+      <view class="slot">
+        <slot name="center"></slot>
+      </view>
+      <view class="default">
+        {{title}}
+      </view>
+    </view>
+    <view class="nav-right"></view>
+  </view>
+</view>

@@ -6,3 +6,76 @@ page {
 .van-search__content {
   background-color: #fff !important;
 }
+
+.banner {
+  height: 275rpx;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-image {
+  width: 96%;
+  border-radius: 25rpx;
+}
+
+.ranking-list {
+  padding: 0 25rpx;
+}
+
+.play-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100rpx;
+  background-color: #ada;
+}
+
+.play-bar-left {
+  display: flex;
+  position: relative;
+}
+
+.play-bar-left>image {
+  position: absolute;
+  top: -20rpx;
+  left: 10rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  animation: albumRotate 10s infinite linear;
+  animation-play-state: running;
+}
+
+.play-bar-left_name {
+  display: flex;
+  align-items: center;
+  margin-left: 130rpx;
+}
+
+.play-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.play-bar-right>image {
+  width: 70rpx;
+}
+
+.play-bar-right>image:first-child {
+  margin-right: 20rpx;
+}
+
+@keyframes albumRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

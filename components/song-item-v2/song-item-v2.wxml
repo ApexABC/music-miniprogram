@@ -1,0 +1,7 @@
+<!--components/song-item-v2/song-item-v2.wxml-->
+<wxs src="../../utils/formaters.wxs" module="formater" />
+<view class="item" bindtap="onMenuItemTap">
+  <image class="image" src="{{itemData.coverImgUrl}}" mode="widthFix" />
+  <view class="describe">{{itemData.description}}</view>
+  <view class="num" wx:if="{{itemData.playCount}}">{{formater.formatNumber(itemData.playCount)}}</view>
+</view>

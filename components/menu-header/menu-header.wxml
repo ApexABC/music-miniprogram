@@ -1,0 +1,31 @@
+<!--components/menu-header/menu-header.wxml-->
+<wxs src="../../utils/formaters.wxs" module="formater" />
+<view class="content">
+  <!-- 背景 -->
+  <image class="bgc-image" src="{{songInfo.coverImgUrl}}" mode="widthFix" />
+  <view class="bgc-cover"></view>
+
+  <!-- 内容 -->
+  <view class="album">
+    <image class="album-image" src="{{songInfo.coverImgUrl}}" mode="widthFix" />
+    <view class="album-detail">
+      <view class="album-detail_header">{{songInfo.name}}</view>
+      <view class="album-detail_artist">
+        <image src="{{songInfo.creator.avatarUrl}}" mode="widthFix" class="album-detail_artist_img" />
+        <view class="album-detail_artist_name">{{songInfo.creator.nickname}}</view>
+      </view>
+      <view class="album-detail_dec">{{songInfo.description}}</view>
+    </view>
+  </view>
+
+  <view class="operation">
+    <view class="operation-favor">
+      <image class="operation-favor_icon" src="/assets/images/icons/favor_icon.png" mode="widthFix" />
+      <text>{{formater.formatNumber(songInfo.subscribedCount)}}</text>
+    </view>
+    <view class="operation-share">
+      <image class="operation-share_icon" src="/assets/images/icons/share_icon.png" mode="widthFix" />
+      <text>分享</text>
+    </view>
+  </view>
+</view>

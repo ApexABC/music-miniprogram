@@ -1,0 +1,13 @@
+/* components/song-area/song-area.wxss */
+.hot-music {
+  white-space: nowrap;
+  height: 320rpx;
+}
+
+.hotMusic-item {
+  display: inline-block;
+}
+
+.hotMusic-item:last-child {
+  margin-right: 24rpx;
+}

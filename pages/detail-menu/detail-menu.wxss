@@ -1,0 +1,17 @@
+/* pages/detail-menu/detail-menu.wxss */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+
+.songList-item {
+  width: 350rpx;
+}
+
+.songList-item_image {
+  width: 350rpx;
+  border-radius: 20rpx;
+}

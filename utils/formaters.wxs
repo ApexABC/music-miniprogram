@@ -1,5 +1,5 @@
 var formatNumber = function (number) {
-  if (number >= 10000) {
+  if (number >= 10000 && number < 100000000) {
     return (number / 10000).toFixed(1) + '万'
   } else if (number >= 100000000) {
     return (number / 100000000).toFixed(1) + '亿'
@@ -8,10 +8,13 @@ var formatNumber = function (number) {
   }
 }
 var formatTime = function (time) {
-  var secondTime = time / 1000
+  var _time = time.toFixed(0)
+  var secondTime = Math.floor(_time / 1000)
   if (secondTime >= 60) {
     var minute = Math.floor(secondTime / 60) < 10 ? '0' + Math.floor(secondTime / 60) : Math.floor(secondTime / 60)
-    return minute + ':' + secondTime % 60
+    return minute + ':' + (secondTime % 60 < 10 ? '0' + secondTime % 60 : secondTime % 60)
+  } else {
+    return secondTime < 10 ? '00:0' + secondTime : '00:' + secondTime
   }
 }
 module.exports = {

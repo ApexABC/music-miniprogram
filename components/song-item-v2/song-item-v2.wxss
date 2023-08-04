@@ -1,0 +1,38 @@
+/* components/song-item-v2/song-item-v2.wxss */
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 250rpx;
+  height: 320rpx;
+  padding: 0 20rpx;
+}
+
+.item .image {
+  width: 230rpx;
+  margin-bottom: 15rpx;
+  border-radius: 15rpx;
+}
+
+.item .describe {
+  font-size: 28rpx;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.item .num {
+  position: absolute;
+  right: 0rpx;
+  bottom: 95rpx;
+  padding: 10rpx 10rpx;
+  font-size: 25rpx;
+  color: #fff;
+  background-color: rgba(10, 10, 10, 0.7);
+  border-radius: 15rpx;
+}

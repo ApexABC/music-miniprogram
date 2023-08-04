@@ -1,0 +1,36 @@
+/* components/nav-bar/nav-bar.wxss */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  color: #fff;
+}
+
+.nav-left,
+.nav-right {
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-left {
+  justify-content: start;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* 控制内容显示 */
+.default {
+  display: none;
+}
+
+.slot:empty+.default {
+  display: block;
+}

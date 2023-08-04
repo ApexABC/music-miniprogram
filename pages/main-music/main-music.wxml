@@ -1,2 +1,42 @@
 <!--pages/main-music/main-music.wxml-->
-<van-search value="{{ value }}" placeholder="请输入搜索关键词" background="#fafafa" />
+<van-search value="{{ searchValue }}" placeholder="请输入搜索关键词" background="#fafafa" bind:focus="handlerInputFocus" />
+
+<!-- 轮播图 -->
+<swiper class="banner" autoplay interval="3000" indicator-dots indicator-color="#bbb" circular>
+  <block wx:for="{{musicBannerList}}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="swiper-image" src="{{item.imageUrl}}" mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 区域头部 -->
+<area-header title="推荐歌曲" bind:moreclick="handlerRecommendMore"></area-header>
+<view class="recommend-music">
+  <block wx:for="{{recommendMusicList}}" wx:key="id">
+    <song-item-v1 itemData="{{item}}" data-index="{{index}}" bindtap="onSongItemTap"></song-item-v1>
+  </block>
+</view>
+<!-- 热门歌单 -->
+<song-area title="热门歌单" songList="{{hotMusicList}}"></song-area>
+<!-- 推荐歌曲 -->
+<song-area title="推荐歌曲" songList="{{HYMusicList}}"></song-area>
+<!-- 巅峰榜 -->
+<area-header title="巅峰榜" hasMore="{{false}}"></area-header>
+<view class="ranking-list">
+  <block wx:for="{{rankingInfos}}" wx:key="id">
+    <ranking-item itemData="{{item}}" Ikey="{{index}}" class="ranking-list-item"></ranking-item>
+  </block>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="play-bar" wx:if="{{currentSong.al.picUrl}}">
+  <view class="play-bar-left" bindtap="onPlayBarToPlayer">
+    <image src="{{currentSong.al.picUrl}}" mode="widthFix" class="play-bar-left_album" style="animation-play-state:{{isPlaying?'running':'paused'}};" />
+    <view class="play-bar-left_name">{{currentSong.name}}</view>
+  </view>
+  <view class="play-bar-right">
+    <image src="/assets/images/player/play_{{isPlaying?'pause':'resume'}}.png" mode="widthFix" bindtap="onPauseOrPlay" />
+    <image src="/assets/images/player/play_music.png" mode="widthFix" />
+  </view>
+</view>

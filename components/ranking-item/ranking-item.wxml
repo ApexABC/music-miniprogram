@@ -1,0 +1,20 @@
+<!--components/ranking-item/ranking-item.wxml-->
+<wxs src="../../utils/formaters.wxs" module="formater" />
+<view class="ranking" bindtap="handlerRankingItemTap">
+  <view class="content">
+    <view class="title">{{itemData.name}}</view>
+    <view class="ranking-list">
+      <block wx:for="{{3}}" wx:key="*this">
+        <view class="ranking-list_name">
+          <text>{{item+1}}.</text>
+          <text>{{itemData.tracks[item].name}}-</text>
+          <text>{{itemData.tracks[item].ar[0].name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="album">
+    <image class="album-image" src="{{itemData.coverImgUrl}}" mode="widthFix" />
+    <view class="album-count">{{formater.formatNumber(itemData.playCount)}}</view>
+  </view>
+</view>
